@@ -136,7 +136,7 @@
 
     do i=1, SN_num
         z= this%SN_z(i)
-        diffs(i) = 5*log10((1+z)**2*this%Calculator%AngularDiameterDistance(z))+25 -this%sn_moduli(i)
+        diffs(i) = 5*log10((1+z)**(2+CMB%eps_dual)*this%Calculator%AngularDiameterDistance(z))+25 -this%sn_moduli(i)
     end do
 
     chisq = dot_product(diffs,matmul(this%sn_ninv,diffs))

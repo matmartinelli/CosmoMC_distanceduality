@@ -71,7 +71,7 @@
     call Names%AddDerivedRange('H0', this%H0_min, this%H0_max)
     this%num_derived = Names%num_derived
     !set number of hard parameters, number of initial power spectrum parameters
-    call this%SetTheoryParameterNumbers(16,last_power_index)
+    call this%SetTheoryParameterNumbers(17,last_power_index) !MMmod: +1 for ddt
 
     end subroutine TP_Init
 
@@ -329,6 +329,7 @@
         CMB%ALens = Params(14)
         CMB%ALensf = Params(15)
         CMB%fdm = Params(16)
+        CMB%eps_dual = Params(17)
         call SetFast(Params,CMB)
     end if
 

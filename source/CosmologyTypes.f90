@@ -118,6 +118,8 @@
         real(mcp) :: omnuh2_sterile = 0._mcp  !note omnhu2 is the sum of this + standard neutrinos
         real(mcp) :: sum_mnu_standard
         real(mcp) reserved(5)
+        !MMmod: distance duality
+        real(mcp) :: eps_dual
     end Type CMBParams
 
     Type, extends(TParameterization) :: TCosmologyParameterization
